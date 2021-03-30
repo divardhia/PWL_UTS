@@ -42,7 +42,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($barangs as $Barang)
+            @foreach ($barang as $Barang)
                 <tr>
                     <td>{{ $Barang->id_barang }}</td>
                     <td>{{ $Barang->kode_barang }}</td>
@@ -67,6 +67,6 @@
         </tbody>
     </table>
     <div class="d-flex">
-        {{ $barangs->links() }}
+        {{ $barang->links() }}
     </div>
 @endsection

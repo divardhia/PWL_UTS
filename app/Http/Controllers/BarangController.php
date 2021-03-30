@@ -16,7 +16,7 @@ class BarangController extends Controller
     public function index()
     {
         $barang = Barang::paginate(10);
-        return view('barang.index', ['barangs' => $barang]);
+        return view('barang.index', ['barang' => $barang]);
     }
 
     /**
@@ -61,8 +61,8 @@ class BarangController extends Controller
     public function show($id)
     {
         //menampilkan detail data dengan menemukan/berdasarkan id_barang
-        $Barang = Barang::find($id);
-        return view('barang.detail', compact('Barang')); 
+        $barang = Barang::find($id);
+        return view('barang.detail', compact('barang')); 
     }
 
     /**
@@ -74,8 +74,8 @@ class BarangController extends Controller
     public function edit($id)
     {
         //
-        $Barang = Barang::find($id);
-        return view('barang.edit', compact('Barang')); 
+        $barang = Barang::find($id);
+        return view('barang.edit', compact('barang')); 
     }
 
     /**
@@ -123,6 +123,6 @@ class BarangController extends Controller
                 ->orWhere('kategori_barang', 'like', "%{$request->keyword}%");
         })->paginate(5);
         $barang->appends($request->only('keyword'));
-        return view('barang.index', compact('Barang'));
+        return view('barang.index', compact('barang'));
     }
 }

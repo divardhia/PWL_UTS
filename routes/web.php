@@ -15,8 +15,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('barang', BarangController::class);
 Route::get('/barang/cari',[BarangController::class, 'search']);
+Route::resource('barang', BarangController::class);
+
 
 Route::get('/', function () {
     return view('welcome');
