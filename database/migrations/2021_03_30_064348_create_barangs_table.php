@@ -18,8 +18,8 @@ class CreateBarangsTable extends Migration
             $table->string("kode_barang")->nullable(false);
             $table->string("nama_barang")->nullable(false);
             $table->string("kategori_barang")->nullable(false);
-            $table->int("harga")->nullable(false);
-            $table->int("qty")->nullable(false);
+            $table->integer("harga")->nullable(false);
+            $table->integer("qty")->nullable(false);
             $table->timestamps();
         });
     }
