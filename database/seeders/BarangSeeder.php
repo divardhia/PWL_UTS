@@ -36,7 +36,6 @@ class BarangSeeder extends Seeder
 
         for($i=0; $i < 20; $i++){
             DB::table('barangs')->insert([
-                //'id_barang'=> $id_barang[$i],
                 'kode_barang' => $kode_barang[$i],
                 'nama_barang' => $nama_barang[$i],
                 'kategori_barang' => $kategori_barang[$i],
