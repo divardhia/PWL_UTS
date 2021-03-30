@@ -114,4 +114,15 @@ class BarangController extends Controller
         return redirect()->route('barang.index')
             ->with('success', 'Barang Berhasil Dihapus');
     }
+
+    public function search(Request $request)
+    {
+        $barang = Barang::when($request->keyword, function ($query) use ($request) {
+            $query->where('kode_barang', 'like', "%{$request->keyword}%")
+                ->orWhere('nama_barang', 'like', "%{$request->keyword}%")
+                ->orWhere('kategori_barang', 'like', "%{$request->keyword}%");
+        })->paginate(5);
+        $barang->appends($request->only('keyword'));
+        return view('barang.index', compact('Barang'));
+    }
 }

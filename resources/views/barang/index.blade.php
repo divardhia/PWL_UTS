@@ -6,6 +6,17 @@
                 <h2>PRODUCT</h2>
             </div>
             
+            <div class="float-left my-4">
+                <form action="/barang/cari/" method="GET">
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="Search users...">
+                        <button type="submit" class="btn btn-primary">
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('barang.create') }}"> Input Barang</a>
             </div>
@@ -48,8 +59,7 @@
 
                             @csrf
                             @method('DELETE')
-
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
                         </form>
                     </td>
                 </tr>
